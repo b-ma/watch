@@ -70,7 +70,7 @@ var watchedFiles = Object.create(null);
 exports.watchTree = function ( root, options, callback ) {
   if (!callback) {callback = options; options = {}}
   else {options = Object.assign({}, options)}
-  // convert interval to seconds
+  // convert interval to milliseconds
   if (options.interval) {options.interval = options.interval * 1000}
   walk(root, options, function (err, files) {
     if (err) throw err;
